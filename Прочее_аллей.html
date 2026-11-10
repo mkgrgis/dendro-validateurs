@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style>
+		.table-container {
+			max-height: 700px;
+			overflow-y: auto;
+			border: 1px solid #ccc;
+			width: 100%;
+		}
+		.objmap {
+			height: 250px;
+			border: 1px solid #ccc;
+			width: 250px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		thead th {
+			position: sticky;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+			border: 2px solid #f04040;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border: 1px solid #888;
+		}
+		th:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #fff1f1;
+			z-index: 4;
+		}
+		td:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+		}
+		.odd{background:#e8edff;}
+		.leaflet-container {
+			z-index: 0
+		}
+	</style>
+	<link rel="stylesheet" href="leaflet.css" />
+</head>
+<body>
+	<script src="leaflet.js"></script>
+	<script src="hexewkb2geojson.js"></script>
+	<script>
+		const objstyle = { fillOpacity: 0.55, color: "#008800", fillColor: "#000000", weight: 2 };
+	</script>
+	<p>Запрос формирования таблицы</p>
+	<p><code>
+select * from "Бирюлёвский дендропарк"."Кл. аллеи другое";
+	</code></p>
+<div class="table-container">
+<table border="1">
+  <thead><tr><th>Q</th><th>№ в ОКН</th><th>Назв Викиданные</th><th>Аллея</th><th>Обсадки и бордюры</th><th>№ строки Дм</th><th>Группа Дм</th><th>Форм вид Дм</th><th>Форм вид Викип</th><th>Вид или род wiki</th><th>годы Дм</th><th>Наличие комп. пос. 2018 г.</th><th>Кустарник-бордюр</th><th>Примеч Дм</th><th>Примеч Викип</th><th>Участки</th><th>Шаг посадки</th><th>Ширина</th><th>№</th><th>Пункт в ОКН</th><th>URL</th><th>Категория</th><th>Картинка</th></tr></thead>
+  <tbody>
+	<tr class="odd"><td>Q138674264</td><td>4.3.1</td><td>Лиственничная аллея</td><td><div class="objmap" id="map0"></div>
+  <script>
+    ewkbMap('0102000020E61000000D0000006B2D27FCADD642405B00643266CC4B40F4B40DEDADD6424021FD9BBC6DCC4B406B2D27FCADD64240DCEFF55A75CC4B4065283806AED64240EBEC1AE379CC4B400620FF16AED64240C3F2E7DB82CC4B40EE0B433FAED642403809EFBC9ECC4B40B34FB637AED642403DF438679FCC4B4053477D48AED64240E469F981ABCC4B40F43E4459AED6424072F90FE9B7CC4B409B3BFA5FAED642407CA98E0BBDCC4B40476BB180AED6424025B9B2FAD9CC4B409B690C84AED64240305BFCB7DCCC4B40774B72C0AED642404331C390E6CC4B40', 'map0');
+   </script></td><td><div class="objmap" id="map1"></div>
+  <script>
+    ewkbMap('0105000020E61000000400000001020000000900000037AAD381ACD64240153944DC9CCC4B4060298183ACD64240325DE38E92CC4B4001F33570ACD64240B056ED9A90CC4B404E1AB4A1ACD64240E6F0A4E084CC4B40BA5ADDA0ACD64240105CE50984CC4B40D19CAB9CACD64240BE7D67C581CC4B40F5E85784ACD642405382B4B574CC4B40786B4F7FACD64240D916540A70CC4B40DDA68988ACD64240AC962A0769CC4B40010200000002000000179925A6B0D64240AEFB22FCE6CC4B4052F98D65B0D64240DDF934DDA1CC4B40010200000002000000E8D209B2AFD64240E67228E89BCC4B408269BD84AFD64240386744696FCC4B40010200000004000000C031BA72ACD6424024647B88A1CC4B4066005E55ACD642402CEEE478AACC4B40D745764AACD64240410DDFC2BACC4B40AE7E11D9ACD642402BEFF494E6CC4B40', 'map1');
+   </script></td><td>16</td><td>исторический дендрарий</td><td>Лиственница европейская (?)</td><td>Лиственница сибирская</td><td>Лиственница сибирская</td><td>1943-1946</td><td>есть</td><td></td><td></td><td>Небольшие утраты, в основном успешно восполнены в 2021 г.</td><td>{7-9,&quot; 20&quot;,&quot; 21&quot;,&quot; 28&quot;}</td><td>5</td><td>5</td><td>6</td><td>4.3.1.</td><td><a href="https://www.wikidata.org/entity/Q138674264">https://www.wikidata.org/entity/Q138674264</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674267</td><td>4.3.2</td><td>Каштановая аллея</td><td><div class="objmap" id="map2"></div>
+  <script>
+    ewkbMap('0102000020E610000005000000425255B2ADD642406779C3222BCC4B4066CC13BEADD64240C98E328749CC4B408F4BC1BFADD64240F2F33A3D4ACC4B40A7BBA1DFADD6424002147E0459CC4B406B2D27FCADD642405B00643266CC4B40', 'map2');
+   </script></td><td><div class="objmap" id="map3"></div>
+  <script>
+    ewkbMap('0105000020E610000002000000010200000003000000D54D733CB0D64240DA61026D61CC4B40B806B64AB0D6424006ABA0585DCC4B40051AC7A3AFD64240E87981A32ECC4B40010200000005000000FB35FEE9ABD64240EAC083B064CC4B40B4136FAEABD6424063D4B5F63ECC4B40BA4670C8ABD64240C7ECD1C034CC4B4066A4390DACD642405871AAB530CC4B402B8C88BDABD64240FB04508C2CCC4B40', 'map3');
+   </script></td><td>11</td><td>исторический дендрарий</td><td>Конский каштан обыкновенный</td><td>Конский каштан</td><td>Конский каштан</td><td>1939 [вост. стор.]</td><td>есть [вся зап. стор.]</td><td></td><td></td><td>западная обсадка была вырублена со скандалом в 2018 году, см. https://vk.com/wall-33521096_2818</td><td>{32,&quot; 33&quot;,&quot; 42&quot;}</td><td>6</td><td>6</td><td>13</td><td>4.3.2.</td><td><a href="https://www.wikidata.org/entity/Q138674267">https://www.wikidata.org/entity/Q138674267</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674270</td><td>4.3.3</td><td>Еловая аллея</td><td>␀</td><td>␀</td><td>9</td><td>исторический дендрарий</td><td>Ель обыкновенная</td><td>Ель европейская</td><td>Ель обыкновенная</td><td>1944-1945</td><td></td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{21,&quot; 22&quot;,&quot; 23&quot;,&quot; 29&quot;,&quot; 36&quot;,&quot; 37&quot;,&quot; 38&quot;,&quot; 44&quot;}</td><td>6</td><td>6</td><td>4</td><td>4.3.3.</td><td><a href="https://www.wikidata.org/entity/Q138674270">https://www.wikidata.org/entity/Q138674270</a></td><td>Porozow historical arboretum Picea avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%95%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%95%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr><td>Q142079486</td><td>␀</td><td>Еловая аллея [от большой лиственничной до большого туевого круга]</td><td><div class="objmap" id="map4"></div>
+  <script>
+    ewkbMap('0102000020E610000007000000EE0B433FAED642403809EFBC9ECC4B40A576757DD5D642407CA2467C82CC4B4080DCD9B2D7D6424088E06EFF80CC4B40DB76908DF6D642406FFC3F3D6CCC4B4069119BD9F8D64240407EDBB86ACC4B40B0EB72A5F9D6424041C692286ACC4B4062D8614CFAD642400B85BEAA69CC4B40', 'map4');
+   </script></td><td><div class="objmap" id="map5"></div>
+  <script>
+    ewkbMap('0105000020E6100000020000000102000000040000001DCC26C0B0D64240F825D1819BCC4B40580D784FD4D64240647A1DCC81CC4B400936AE7FD7D6424048533D997FCC4B4029E6C52EF6D642406AA164726ACC4B40010200000004000000B0613C39F9D64240ECD56C8A6CCC4B40A264CD23DAD64240477B174A81CC4B40AA1908B8D6D642408117C79283CC4B40BD056DCDB1D64240C14E56B19DCC4B40', 'map5');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079486">https://www.wikidata.org/entity/Q142079486</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q142079487</td><td>␀</td><td>Еловая аллея [от большого туевого круга до окраинной дороги]</td><td><div class="objmap" id="map6"></div>
+  <script>
+    ewkbMap('0105000020E6100000020000000102000000070000002318625001D7424097F03AD164CC4B40ACE1C73D02D74240DFFE5C3464CC4B407039A80E03D74240A38A879C63CC4B4034362A2625D7424087CDB68949CC4B40F982161230D7424085B8CDAF41CC4B40AA413D224BD74240D1AD7C3B2ECC4B40098CF50D4CD74240CBC232912DCC4B40010200000004000000BF29AC5450D74240911216702ACC4B404897EDF950D74240AFCF9CF529CC4B40DDC71BAA73D74240877EB78A0FCC4B40EDB0D35977D74240DCE4A6BC0CCC4B40', 'map6');
+   </script></td><td><div class="objmap" id="map7"></div>
+  <script>
+    ewkbMap('0105000020E6100000040000000102000000020000000D3DBDAD4FD74240217711A628CC4B4013995E0773D74240768FC7670DCC4B40010200000006000000E17EC00303D742408763A76961CC4B4072D014F021D742405D9088844ACC4B4026625B5029D74240300A270E45CC4B40E639C72533D74240572C34C63DCC4B409029C4C837D74240A1A2EA573ACC4B403473373E49D742400C569C6A2DCC4B400102000000040000007110638852D74240977329AE2ACC4B40B02193E755D74240E5304E3228CC4B407119DC7B5DD74240E2CD757522CC4B4023E4727275D74240DA48C8F610CC4B400102000000050000004B71FA1F05D74240C1FF56B263CC4B40164B917C25D74240456227614BCC4B4014AFB2B629D742408E62145F48CC4B4013B534B742D742406DE34F5436CC4B40B032BF3F4AD74240B7A7F5C830CC4B40', 'map7');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079487">https://www.wikidata.org/entity/Q142079487</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674270</td><td>4.3.3</td><td>Еловая аллея</td><td>␀</td><td>␀</td><td>10</td><td>исторический дендрарий</td><td>Ель обыкновенная</td><td>Ель европейская</td><td>Ель обыкновенная</td><td>1939</td><td></td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{21,&quot; 22&quot;,&quot; 23&quot;,&quot; 29&quot;,&quot; 36&quot;,&quot; 37&quot;,&quot; 38&quot;,&quot; 44&quot;}</td><td>6</td><td>6</td><td>4</td><td>4.3.3.</td><td><a href="https://www.wikidata.org/entity/Q138674270">https://www.wikidata.org/entity/Q138674270</a></td><td>Porozow historical arboretum Picea avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%95%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%95%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr class="odd"><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>␀</td><td>␀</td><td>4</td><td>исторический дендрарий</td><td>Берёза бородавчатая, или повислая</td><td>Берёза плакучая</td><td>Берёза повислая</td><td>1939</td><td></td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{19,&quot; 28-30&quot;,&quot; 27&quot;,&quot; 31&quot;,&quot; 32&quot;,&quot; 34&quot;,&quot; 37&quot;,39}</td><td>4</td><td>6</td><td>3</td><td>4.3.4.</td><td><a href="https://www.wikidata.org/entity/Q138674271">https://www.wikidata.org/entity/Q138674271</a></td><td>Porozow historical arboretum Betula avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg</a></td></tr>
+	<tr><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>␀</td><td>␀</td><td>3</td><td>исторический дендрарий</td><td></td><td>Берёза плакучая</td><td>Берёза повислая</td><td>␀</td><td>␀</td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{19,&quot; 28-30&quot;,&quot; 27&quot;,&quot; 31&quot;,&quot; 32&quot;,&quot; 34&quot;,&quot; 37&quot;,39}</td><td>4</td><td>6</td><td>3</td><td>4.3.4.</td><td><a href="https://www.wikidata.org/entity/Q138674271">https://www.wikidata.org/entity/Q138674271</a></td><td>Porozow historical arboretum Betula avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg</a></td></tr>
+	<tr class="odd"><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>␀</td><td>␀</td><td>5</td><td>исторический дендрарий</td><td>Берёза бородавчатая, или повислая</td><td>Берёза плакучая</td><td>Берёза повислая</td><td>?1943-1944?</td><td>␀</td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{19,&quot; 28-30&quot;,&quot; 27&quot;,&quot; 31&quot;,&quot; 32&quot;,&quot; 34&quot;,&quot; 37&quot;,39}</td><td>4</td><td>6</td><td>3</td><td>4.3.4.</td><td><a href="https://www.wikidata.org/entity/Q138674271">https://www.wikidata.org/entity/Q138674271</a></td><td>Porozow historical arboretum Betula avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg</a></td></tr>
+	<tr><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>␀</td><td>␀</td><td>6</td><td>исторический дендрарий</td><td>Берёза бородавчатая, или повислая</td><td>Берёза плакучая</td><td>Берёза повислая</td><td>1943-1944
+?</td><td></td><td>␀</td><td></td><td>хорошая, утрачены и восполнены отдельные деревья</td><td>{19,&quot; 28-30&quot;,&quot; 27&quot;,&quot; 31&quot;,&quot; 32&quot;,&quot; 34&quot;,&quot; 37&quot;,39}</td><td>4</td><td>6</td><td>3</td><td>4.3.4.</td><td><a href="https://www.wikidata.org/entity/Q138674271">https://www.wikidata.org/entity/Q138674271</a></td><td>Porozow historical arboretum Betula avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.jpg</a></td></tr>
+	<tr class="odd"><td>Q142079484</td><td>␀</td><td>Берёзовая аллея [от Внутреннего пруда до большого туевого круга]</td><td><div class="objmap" id="map8"></div>
+  <script>
+    ewkbMap('0102000020E6100000090000004955C9B6C2D64240EF7783C366CC4B409A55E938C8D642400DED52D966CC4B40AB8C90CBC9D64240F5AA84DD66CC4B4007B13385CED6424001E374ED66CC4B40182D9B94DDD64240DD96C80567CC4B4067BA3203F0D64240CB87FB2367CC4B40E2AFC91AF5D642409C035F2C67CC4B40A6BFF27BF6D6424084C1903067CC4B404C5A4CC7F7D642404200153367CC4B40', 'map8');
+   </script></td><td><div class="objmap" id="map9"></div>
+  <script>
+    ewkbMap('0105000020E610000002000000010200000002000000AEEC2708C3D64240C5C48B2A68CC4B40688C20DFEFD64240717E79B768CC4B40010200000002000000D8C7F951C3D64240EAD4F08865CC4B40F4ECA820F5D64240FB9B06FB65CC4B40', 'map9');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079484">https://www.wikidata.org/entity/Q142079484</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q142079485</td><td>␀</td><td>Берёзовая аллея [от большого туевого круга до окраинной дороги]</td><td><div class="objmap" id="map10"></div>
+  <script>
+    ewkbMap('0102000020E610000005000000700B96EA02D7424096D05D1267CC4B404B2F7B2304D74240D18CEA1967CC4B40A4D0686105D74240E9CEB81567CC4B4015B078454BD742405B00643266CC4B403AD3DFA69AD742403D8B941C66CC4B40', 'map10');
+   </script></td><td><div class="objmap" id="map11"></div>
+  <script>
+    ewkbMap('0105000020E61000000400000001020000000200000068846D7A06D7424018C3E62D68CC4B40B2E20ADE46D74240726A0CDF67CC4B40010200000002000000A9C53B1B4DD74240D83BED3A65CC4B405695229E91D74240D2DAD9FC64CC4B40010200000002000000A917D75306D74240BAAC78D965CC4B40FAAEAD4445D74240D236FE4465CC4B400102000000020000001A0B54104DD742407E74EACA67CC4B4039F2406491D742403C574A8567CC4B40', 'map11');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079485">https://www.wikidata.org/entity/Q142079485</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q142079483</td><td>␀</td><td>Берёзовая аллея [от тополёвой до Внутреннего пруда]</td><td><div class="objmap" id="map12"></div>
+  <script>
+    ewkbMap('0102000020E6100000060000005927785446D6424025A5EA6866CC4B40345FCA6548D6424037E2C96E66CC4B4067D9EE7959D6424084AD235866CC4B40F596170566D6424007301B5366CC4B405E21BDF26AD6424049F1965066CC4B406B2D27FCADD642405B00643266CC4B40', 'map12');
+   </script></td><td><div class="objmap" id="map13"></div>
+  <script>
+    ewkbMap('0105000020E61000000300000001020000000400000005DB2D6E48D6424054234FED67CC4B40C2DF2F664BD642401262D3EF67CC4B403E74E6C358D642400025F4E967CC4B4078E283E85AD64240E9E225EE67CC4B40010200000002000000D671FC5069D64240AD2699E667CC4B40A9C711C6AAD64240C5C48B2A68CC4B400102000000020000006AE8555348D6424085B35BCB64CC4B400E4B033FAAD64240F0F384CA64CC4B40', 'map13');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079483">https://www.wikidata.org/entity/Q142079483</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674272</td><td>4.3.5</td><td>Большая липовая аллея</td><td>␀</td><td>␀</td><td>13</td><td>исторический дендрарий</td><td>Липа мелколистная</td><td>Липа мелколистная</td><td>Липа сердцевидная</td><td>1944-1945</td><td></td><td>␀</td><td></td><td>отличная, потерь нет</td><td>{21,&quot; 24&quot;,&quot; 26&quot;,&quot; 27&quot;,&quot; 28&quot;,&quot; 33&quot;,&quot; 34&quot;,&quot; 35&quot;,&quot; 43&quot;}</td><td>3</td><td>5.5</td><td>2</td><td>4.3.5.</td><td><a href="https://www.wikidata.org/entity/Q138674272">https://www.wikidata.org/entity/Q138674272</a></td><td>Porozow historical arboretum Tilia grand avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%201-%D0%B0%D1%8F%20%D0%9B%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%201-%D0%B0%D1%8F%20%D0%9B%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr class="odd"><td>Q142079488</td><td>␀</td><td>Липовая большая аллея [от каштановой до большого туевого круга]</td><td><div class="objmap" id="map14"></div>
+  <script>
+    ewkbMap('0102000020E610000006000000425255B2ADD642406779C3222BCC4B40E8ECAEFDAED642401333B1AF2BCC4B4045F872FAD5D64240B1C22D1F49CC4B4093D8FF4AF8D642405002F62C63CC4B40FE2C9622F9D6424044B060D163CC4B40B67A9807FAD642409D99057F64CC4B40', 'map14');
+   </script></td><td><div class="objmap" id="map15"></div>
+  <script>
+    ewkbMap('0105000020E61000000200000001020000000600000029E6C52EF6D642404A592B7F63CC4B408C8A9356D7D642405CB862354CCC4B40BF54223FD1D64240ED56E07547CC4B404983DBDAC2D64240D5AF743E3CCC4B40EEFA16E7B9D64240C776082D35CC4B40EDEB6580B0D64240F4554D6B2ECC4B40010200000005000000343C07E0B0D64240615A2FE12BCC4B409FD3E242D4D64240A163ACDB45CC4B40BA30D28BDAD64240E04092A34ACC4B4082250D24DED64240C1632E5F4DCC4B40987B9285F9D64240CE3D7F3562CC4B40', 'map15');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079488">https://www.wikidata.org/entity/Q142079488</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q142079489</td><td>␀</td><td>Липовая большая аллея [от большого туевого круга до окраинной дороги]</td><td><div class="objmap" id="map16"></div>
+  <script>
+    ewkbMap('0102000020E61000000F000000718797F100D74240C4622F6F69CC4B40B8335D9901D7424053A74DE669CC4B4046D49F5802D7424082E3326E6ACC4B40F01FC14307D74240F1A611E96DCC4B408048BF7D1DD74240EFCBF4A67DCC4B40CF56146525D7424081BBA24A83CC4B40AA189DE227D74240C2D20A1D85CC4B4053A005572FD74240EFFC474B8ACC4B40C27751AA33D7424088B59D5B8DCC4B408C0EED084CD7424020990E9D9ECC4B4083A1B37169D742400336316EB4CC4B4089319F628BD7424073F794F7CCCC4B401D1950148DD74240B456B439CECC4B407A99171692D742400C06D7DCD1CC4B40BF1FC88B96D7424063FDB0EFD4CC4B40', 'map16');
+   </script></td><td><div class="objmap" id="map17"></div>
+  <script>
+    ewkbMap('0105000020E61000000200000001020000000A00000060EFB4EB94D7424065ADFC8DD1CC4B4099EC44EE8ED74240559632BACDCC4B4067C3503D88D7424010864BD8C8CC4B405479F1344FD74240CC24EA059FCC4B4021E868554BD74240C8B5A1629CCC4B405E262FD747D74240E18D16B199CC4B40D8ADAFBF36D7424005D781188DCC4B4013A0015020D74240969A98897DCC4B40C7ACCDB51ED7424055698B6B7CCC4B40B0F4EB9804D742401114E40C6ACC4B4001020000000800000011AD702601D7424064682BE56BCC4B40528E137019D7424078F7B64F7DCC4B40D44C52F41BD7424054D3E4187FCC4B40469CA96B48D742404AEAA97A9ECC4B40144E1C8A4CD742403C783760A1CC4B4087C0914083D74240C2FC70EBC9CC4B406B8EBD288BD742405B39C5F4CECC4B40AADB341191D742404C930843D3CC4B40', 'map17');
+   </script></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q142079489">https://www.wikidata.org/entity/Q142079489</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674272</td><td>4.3.5</td><td>Большая липовая аллея</td><td>␀</td><td>␀</td><td>14</td><td>исторический дендрарий</td><td>Липа мелколистная</td><td>Липа мелколистная</td><td>Липа сердцевидная</td><td>1962</td><td>␀</td><td>␀</td><td></td><td>отличная, потерь нет</td><td>{21,&quot; 24&quot;,&quot; 26&quot;,&quot; 27&quot;,&quot; 28&quot;,&quot; 33&quot;,&quot; 34&quot;,&quot; 35&quot;,&quot; 43&quot;}</td><td>3</td><td>5.5</td><td>2</td><td>4.3.5.</td><td><a href="https://www.wikidata.org/entity/Q138674272">https://www.wikidata.org/entity/Q138674272</a></td><td>Porozow historical arboretum Tilia grand avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%201-%D0%B0%D1%8F%20%D0%9B%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%201-%D0%B0%D1%8F%20%D0%9B%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr><td>Q138674273</td><td>4.3.6</td><td>Малая липовая аллея</td><td><div class="objmap" id="map18"></div>
+  <script>
+    ewkbMap('0102000020E61000000400000015B078454BD742405B00643266CC4B4034362A2625D7424087CDB68949CC4B404E756D14FED6424006ADD1BC2DCC4B401491065CFCD64240DD47C9062DCC4B40', 'map18');
+   </script></td><td><div class="objmap" id="map19"></div>
+  <script>
+    ewkbMap('0105000020E610000004000000010200000002000000590DD30847D7424069780EC061CC4B403E5C72DC29D74240D436B4B74ACC4B40010200000004000000DCF0603024D742403BC6151747CC4B407795FFDA0BD74240B5C35F9335CC4B401480DA0308D7424099E436D032CC4B40ED5A8CCB02D74240BE840A0E2FCC4B400102000000040000003B0ECD8646D74240FCA13E6E64CC4B403701E19E42D74240B64368A961CC4B40FFA4EBD33BD7424012CF23905CCC4B400A83328D26D7424097FE25A94CCC4B400102000000020000004F5C8E5720D74240FF1DF6E747CC4B400C66023400D74240E759A4E430CC4B40', 'map19');
+   </script></td><td>15</td><td>исторический дендрарий</td><td>Липа мелколистная</td><td>Липа крупнолистная</td><td>Липа крупнолистная</td><td>1945-1946
+1961</td><td></td><td>␀</td><td></td><td>отличная, потерь нет</td><td>{36,&quot; 37&quot;,&quot; 38&quot;,&quot; 44&quot;}</td><td>7</td><td>5</td><td>11</td><td>4.3.6.</td><td><a href="https://www.wikidata.org/entity/Q138674273">https://www.wikidata.org/entity/Q138674273</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674274</td><td>4.3.7</td><td>Кленовая аллея</td><td><div class="objmap" id="map20"></div>
+  <script>
+    ewkbMap('0105000020E6100000020000000102000000050000004E756D14FED6424006ADD1BC2DCC4B40DDD330D7FDD642405E3A9CAF48CC4B40C0304F9DFDD64240743A353C62CC4B4001F2CA9AFDD64240FDD5880563CC4B40D8721D99FDD64240E5A727E263CC4B40010200000006000000256C89A6FDD642402984C42C6ACC4B4090ACB2A5FDD64240E77A91BF6ACC4B40786AE4A9FDD64240936291706BCC4B40786AE4A9FDD642403480B74082CC4B405A5139DCFDD64240E1D5CD2099CC4B406C8E18E2FDD64240A45588A29BCC4B40', 'map20');
+   </script></td><td><div class="objmap" id="map21"></div>
+  <script>
+    ewkbMap('0105000020E610000004000000010200000002000000CD5A0A48FBD64240FE09D39C61CC4B402011AEDBFBD642404634CBAF30CC4B4001020000000200000071E9F3ACFFD642409F98501C9BCC4B403CD63153FFD64240BD23BE6E6CCC4B40010200000002000000483C3487FFD6424033935E8A61CC4B4071E9F3ACFFD642404606B98B30CC4B40010200000002000000CC4065FCFBD642400564F9049ACC4B403E2A59A9FBD64240816731676CCC4B40', 'map21');
+   </script></td><td>12</td><td>исторический дендрарий</td><td>Клён остролистный</td><td>Клён остролистный</td><td>Клён остролистный</td><td>1944</td><td></td><td>Спирея японская (сохранилась южнее большого т. круга)</td><td></td><td>отличная, потерь нет</td><td>{23,&quot; 34&quot;,&quot; 35&quot;,&quot; 36&quot;}</td><td>5</td><td>4.5</td><td>7</td><td>4.3.7.</td><td><a href="https://www.wikidata.org/entity/Q138674274">https://www.wikidata.org/entity/Q138674274</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674275</td><td>4.3.8</td><td>Вязовая аллея</td><td><div class="objmap" id="map22"></div>
+  <script>
+    ewkbMap('0102000020E610000006000000C198E3CBFAD642404419051C9DCC4B40D4C78D6CF8D6424045F12A6B9BCC4B40A576757DD5D642407CA2467C82CC4B40337B8FE9BFD642401E41E03774CC4B40172CD505BCD6424014E74DEA70CC4B40F4B40DEDADD6424021FD9BBC6DCC4B40', 'map22');
+   </script></td><td>␀</td><td>8</td><td>исторический дендрарий</td><td>Вяз</td><td>Вяз гладкий</td><td>Вяз гладкий</td><td>?</td><td></td><td>Роза сизая (остатки на 21 уч.) [1958-1959]</td><td></td><td>фактически утрачена между 2002 и 2008 г., остались несколько вязов не образующих ряд обсадки</td><td>{21,&quot; 29&quot;,&quot; 22&quot;,&quot; 23&quot;}</td><td>6</td><td>6</td><td>12</td><td>4.3.8.</td><td><a href="https://www.wikidata.org/entity/Q138674275">https://www.wikidata.org/entity/Q138674275</a></td><td>Porozow historical arboretum Ulmus avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%92%D1%8F%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%92%D1%8F%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr class="odd"><td>Q138674276</td><td>4.3.9</td><td>Ясеневая аллея</td><td><div class="objmap" id="map23"></div>
+  <script>
+    ewkbMap('0102000020E610000003000000CD6D0C4B4DD74240ADD799E72DCC4B40AFB6BD384CD74240A4F496BC4BCC4B4015B078454BD742405B00643266CC4B40', 'map23');
+   </script></td><td><div class="objmap" id="map24"></div>
+  <script>
+    ewkbMap('0105000020E610000002000000010200000003000000445CEFED4CD74240794D599764CC4B404FA84CD64DD74240383EA4294CCC4B40DEA4B3DD4ED742408ECC237F30CC4B40010200000004000000EC7EBA2649D74240F1CBAA1963CC4B408D8AEE0F4AD742405CB862354CCC4B408C9E5BE84AD74240C099F3E736CC4B40A49872744BD7424005FD851E31CC4B40', 'map24');
+   </script></td><td>27</td><td>исторический дендрарий</td><td>Ясень обыкновенный (северная часть)
+Ясень пенсильванский (южная часть)</td><td>Ясень обыкновенный / Ясень пенсильванский</td><td>Ясень обыкновенный / Ясень пенсильванский</td><td>?
+?</td><td></td><td>Дрок красильный (утрачен)</td><td></td><td>Больше половины утрачено, была попытка восстановления </td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>4.3.9.</td><td><a href="https://www.wikidata.org/entity/Q138674276">https://www.wikidata.org/entity/Q138674276</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674277</td><td>4.3.10</td><td>Большая рябиновая аллея</td><td><div class="objmap" id="map25"></div>
+  <script>
+    ewkbMap('0102000020E6100000090000004E756D14FED6424006ADD1BC2DCC4B400859164CFCD64240249232F32ECC4B403D714A8AD9D64240EE42739D46CC4B4050583DBBD7D6424088A5DCD847CC4B4045F872FAD5D64240B1C22D1F49CC4B406B84D95FD1D64240B517D1764CCC4B404A4AD5D1CCD6424054313AC54FCC4B4052E2299ABDD6424066A5A4E25ACC4B406B2D27FCADD642405B00643266CC4B40', 'map25');
+   </script></td><td><div class="objmap" id="map26"></div>
+  <script>
+    ewkbMap('0105000020E6100000040000000102000000060000004D987A27B0D642400FB743C362CC4B40148145D9B6D64240886F17505ECC4B4067406260C2D64240AB08371955CC4B407D5C1B2AC6D64240DCF4673F52CC4B40ED6DE987C7D642404EF8003851CC4B407C8D6ECED2D642403473373E49CC4B4001020000000200000084BBB376DBD64240E86B96CB46CC4B40BB4B3D66FBD64240B7D507ED30CC4B40010200000002000000B066AE1DD6D64240FFDB76EB46CC4B40981F6E3DF9D6424035E37ED12FCC4B400102000000020000002E03CE52B2D64240144031B264CC4B40BD8A3155D5D64240983270404BCC4B40', 'map26');
+   </script></td><td>21</td><td>исторический дендрарий</td><td>Рябина обыкновенная</td><td>Рябина обыкновенная</td><td>Рябина обыкновенная</td><td>?</td><td>есть</td><td>Дрок красильный (утрачен, компактные посадки 2018 года на участке 33)</td><td></td><td>Больше половины утрачено, была попытка восстановления</td><td>{33,&quot; 34&quot;,&quot; 35&quot;,&quot; 43&quot;}</td><td>4.5</td><td>5</td><td>9</td><td>4.3.10. (Большая рябиновая)</td><td><a href="https://www.wikidata.org/entity/Q138674277">https://www.wikidata.org/entity/Q138674277</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674279</td><td>4.3.11</td><td>Малая рябиновая аллея</td><td><div class="objmap" id="map27"></div>
+  <script>
+    ewkbMap('0102000020E6100000050000004E756D14FED6424006ADD1BC2DCC4B40241E9AC3FFD64240BA43D48E2CCC4B407C77D09101D7424043E55FCB2BCC4B4070AF71A202D74240CC1022742BCC4B4003BB50AF4AD74240A8209AD42BCC4B40', 'map27');
+   </script></td><td><div class="objmap" id="map28"></div>
+  <script>
+    ewkbMap('0105000020E610000002000000010200000002000000E607AEF204D74240D8D880632ACC4B40230E7E8747D7424014F131B32ACC4B400102000000020000008084BC7905D742405A3B9B9F2CCC4B40177A692F47D74240FB6074D42CCC4B40', 'map28');
+   </script></td><td>22</td><td>исторический дендрарий</td><td></td><td>Рябина обыкновенная</td><td>Рябина обыкновенная</td><td>?
+1961</td><td>есть</td><td>Дрок красильный (утрачен, компактные посадки 2018 года на углу с малой липовой аллеей)</td><td></td><td>Больше половины утрачено, была попытка восстановления</td><td>{44,&quot; 48&quot;}</td><td>5</td><td>6</td><td>14</td><td>4.3.11. (Малая рябиновая)</td><td><a href="https://www.wikidata.org/entity/Q138674279">https://www.wikidata.org/entity/Q138674279</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674280</td><td>4.3.12</td><td>Робиниевая аллея</td><td><div class="objmap" id="map29"></div>
+  <script>
+    ewkbMap('0105000020E6100000020000000102000000050000007F750B13FCD64240D92D5D1CF0CB4B4054BCDB06FFD64240F612BE52F1CB4B4083CAAE6AFFD6424073BED87BF1CB4B40235AE14C02D74240FBC9BD65F3CB4B40C754B07C4CD742402CA9C9422ACC4B400102000000020000004208C89750D742400C569C6A2DCC4B403AD3DFA69AD742403D8B941C66CC4B40', 'map29');
+   </script></td><td><div class="objmap" id="map30"></div>
+  <script>
+    ewkbMap('0105000020E61000000400000001020000000200000046F762DE99D742405CB0AFD062CC4B40ED73C64153D74240892FC9B72DCC4B4001020000000A000000B8616FBD01D7424096DC723FF1CB4B40264D28E906D74240FAF19716F5CB4B40130A117008D7424076DF313CF6CB4B40DCD039E40BD74240DA56B3CEF8CB4B408DF96F140FD74240C727092EFBCB4B401533672211D742405B0FBADFFCCB4B401EB5D32016D7424083DE1B4300CC4B4023E06B6347D74240CFFAEF1C25CC4B40FE2B2B4D4AD74240B065434827CC4B402601C5234CD74240B636E8A628CC4B4001020000000400000057A53EDA49D742407918FFE329CC4B40C5A810340BD74240D3E92FAAFBCB4B40B535221807D742403931DA99F8CB4B404BD356DB03D742404D327216F6CB4B400102000000020000006626625B50D742406B3EF89A2FCC4B4054DF9E8C96D74240DE40DC3065CC4B40', 'map30');
+   </script></td><td>20</td><td>исторический дендрарий</td><td>Робиния ложноакациевая</td><td>Белая акация</td><td>Робиния ложноакациевая</td><td>?</td><td></td><td>␀</td><td></td><td>Больше половины утрачено, была попытка восстановления</td><td>{39,&quot; 40&quot;,&quot; 48&quot;,&quot; 49&quot;}</td><td>7</td><td>6.5</td><td>5</td><td>4.3.12. Робиниевая (белой акации)</td><td><a href="https://www.wikidata.org/entity/Q138674280">https://www.wikidata.org/entity/Q138674280</a></td><td>Porozow historical arboretum Robinia avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%90%D0%BB%D0%BB%D0%B5%D1%8F%20%D1%80%D0%BE%D0%B1%D0%B8%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%BE%D0%BC%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B8%20%D0%BB%D0%B5%D1%82%D0%BE%D0%BC%202014%20%D0%B3..jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%90%D0%BB%D0%BB%D0%B5%D1%8F%20%D1%80%D0%BE%D0%B1%D0%B8%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%BE%D0%BC%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B8%20%D0%BB%D0%B5%D1%82%D0%BE%D0%BC%202014%20%D0%B3..jpg</a></td></tr>
+	<tr class="odd"><td>Q138674282</td><td>4.3.13</td><td>Пихтовая аллея</td><td><div class="objmap" id="map31"></div>
+  <script>
+    ewkbMap('0102000020E61000000B000000EDB0D35977D74240DCE4A6BC0CCC4B40530CEB2175D742400C1357DF0ACC4B40378F1E1A71D742404FACF82B09CC4B40C596790668D74240C1B5C99706CC4B403CA7B45950D7424041310D1E01CC4B40E9B985AE44D74240308AD46AFECB4B405CC0159A35D742407A008BFCFACB4B407291D6732DD7424087B47C13F9CB4B402AF004B122D7424046E5CBB0F6CB4B40D9AFE02307D742405B3A8B83F0CB4B4094FB1D8A02D742402C746F8FEFCB4B40', 'map31');
+   </script></td><td><div class="objmap" id="map32"></div>
+  <script>
+    ewkbMap('0105000020E61000000200000001020000000A00000042791F4773D74240FAE9E4B10BCC4B4038F17AD56FD742405A2668380ACC4B40425C397B67D74240D839179007CC4B401986D91544D7424036D1425DFFCB4B40A89663682BD742401583D1F6F9CB4B40A13A0C9C22D742401C04C2F3F7CB4B40E597665F1ED7424082CF6ADCF6CB4B40CFEE35A90DD74240E902A8F3F2CB4B40ADF078A40BD74240A284F46FF2CB4B403F671C3405D7424049B5F40DF1CB4B40010200000007000000D64C632074D74240DE38CE1209CC4B40003961C268D7424092EFADA305CC4B401E296C5045D7424096DFB3BFFDCB4B407AABAE4335D742403326B330FACB4B40F134F4AA29D742405808066BF7CB4B4042A89C4022D742407627E9ABF5CB4B40800EF3E505D74240B5CD435CEFCB4B40', 'map32');
+   </script></td><td>24</td><td>исторический дендрарий</td><td></td><td>Пихта сибирская</td><td>Пихта сибирская</td><td>?</td><td>есть</td><td></td><td></td><td>Утрачено более 70%, аллея под угрозой. Попытка восполнения в 2020 году не удалась.</td><td>{49,&quot; 53&quot;}</td><td>6.5</td><td>5</td><td>10</td><td>4.3.13.</td><td><a href="https://www.wikidata.org/entity/Q138674282">https://www.wikidata.org/entity/Q138674282</a></td><td>Porozow historical arboretum Abies avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9F%D0%B8%D1%85%D1%82%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D1%8F%20%D0%B2%202014%20%D0%B3..jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9F%D0%B8%D1%85%D1%82%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F%20%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D1%8F%20%D0%B2%202014%20%D0%B3..jpg</a></td></tr>
+	<tr><td>Q138674283</td><td>4.3.14</td><td>Большая туевая аллея</td><td><div class="objmap" id="map33"></div>
+  <script>
+    ewkbMap('0102000020E61000000800000037FC6EBA65D64240293C6876DDCC4B40902DCBD765D642406C223317B8CC4B4090FFB8B365D6424049E47107A0CC4B40FC3FE2B265D642407F87A2409FCC4B408BCCB79965D64240E18AD5308DCC4B40A813758B65D642409F30726083CC4B40F6DECE7465D64240E82D1EDE73CC4B402B4EB51666D6424036E50AEF72CC4B40', 'map33');
+   </script></td><td><div class="objmap" id="map34"></div>
+  <script>
+    ewkbMap('0105000020E61000000200000001020000000600000026C5C72764D64240129E7532DDCC4B40AFD6E48464D64240BFB7E9CF7ECC4B40322BCA5B64D6424003B91F4B7ACC4B40F66E3D5464D64240D3AA4CE779CC4B4073EC455964D64240EDF88AC976CC4B401AE9FB5F64D642401223957373CC4B400102000000080000000D1B65FD66D64240DCE6D720DDCC4B408A22A46E67D64240F619619B9ECC4B40D71B107C67D64240BDB7335D99CC4B406C7FC23467D64240A55247228FCC4B40540FE21467D642405FF4705D8CCC4B40132054F366D6424015191D9084CC4B407E607DF266D642408E0D38A682CC4B408A3C49BA66D64240E39EF87B73CC4B40', 'map34');
+   </script></td><td>25</td><td>исторический дендрарий</td><td>Туя западная</td><td>Туя западная</td><td>Туя западная</td><td>?</td><td>␀</td><td>␀</td><td></td><td>В северной части есть значительные утраты, восполнены частично</td><td>{5,&quot; 6&quot;,&quot; 19&quot;,&quot; 20&quot;,&quot; 28&quot;}</td><td>2</td><td>4</td><td>8</td><td>4.3.14.</td><td><a href="https://www.wikidata.org/entity/Q138674283">https://www.wikidata.org/entity/Q138674283</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674285</td><td>4.3.15</td><td>Малая туевая аллея</td><td><div class="objmap" id="map35"></div>
+  <script>
+    ewkbMap('0102000020E61000000500000050583DBBD7D6424088A5DCD847CC4B40DDD330D7FDD642405E3A9CAF48CC4B4088179F5D19D7424099AE714749CC4B404232D3AC22D74240A514747B49CC4B4034362A2625D7424087CDB68949CC4B40', 'map35');
+   </script></td><td><div class="objmap" id="map36"></div>
+  <script>
+    ewkbMap('0105000020E610000004000000010200000002000000AE0C4F54DBD6424035EF384547CC4B40DF0DB3E1FAD6424094DDCCE847CC4B40010200000002000000535A7F4B00D74240FF4B080C48CC4B40726083CF20D74240B10AE58E48CC4B400102000000020000004750A15F00D74240DA9DFF6849CC4B403DD7F7E120D7424069E21DE049CC4B400102000000030000008F7DDAF2DBD6424028B110C248CC4B40B8DFEBB5EAD6424004C1882249CC4B405658BACCFAD64240BD28305349CC4B40', 'map36');
+   </script></td><td>26</td><td>исторический дендрарий</td><td>Туя западная</td><td>Туя западная</td><td>Туя западная</td><td>?</td><td></td><td>␀</td><td></td><td>С 2011 года утраты в восточной части, не восполнены</td><td>{35,&quot; 36&quot;}</td><td>5</td><td>6</td><td>15</td><td>4.3.15.</td><td><a href="https://www.wikidata.org/entity/Q138674285">https://www.wikidata.org/entity/Q138674285</a></td><td>Porozow historical arboretum Thuja avenue</td><td><a href="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%A2%D1%83%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg">https://commons.wikimedia.org/wiki/Special:FilePath/%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D1%91%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D0%BF%D0%B0%D1%80%D0%BA.%20%D0%A2%D1%83%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F.jpg</a></td></tr>
+	<tr><td>Q138674286</td><td>4.3.16</td><td>Сиреневая аллея</td><td><div class="objmap" id="map37"></div>
+  <script>
+    ewkbMap('0102000020E6100000090000000859164CFCD64240249232F32ECC4B401491065CFCD64240DD47C9062DCC4B40CC6E7720FCD64240C49A255C23CC4B4067EB85A7FCD64240DFC6C1001DCC4B403D6CD8A5FCD64240CAB040AA17CC4B405580947DFCD6424023AB11B00CCC4B40DEBFC3FEFCD64240E7278BB102CC4B40C70D64E2FBD6424066AEC21CF3CB4B407F750B13FCD64240D92D5D1CF0CB4B40', 'map37');
+   </script></td><td>␀</td><td>51</td><td>прочие аллеи, дорожки и тропы</td><td>Сирени различных видов и форм на 47-м участке</td><td>Разные виды сирени</td><td>Разные виды сирени</td><td></td><td>есть, 2025 год</td><td></td><td></td><td>есть потери кустов</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>4.3.16.</td><td><a href="https://www.wikidata.org/entity/Q138674286">https://www.wikidata.org/entity/Q138674286</a></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138698230</td><td>4.4.1</td><td>Западная тополиная аллея</td><td><div class="objmap" id="map38"></div>
+  <script>
+    ewkbMap('0102000020E610000019000000A6A1A1DA3BD64240171A3ED818CD4B40A737482D39D6424000F2142818CD4B40B768B74C3CD6424096D7005B14CD4B405F5738EE39D642405A2668380ACD4B40EF03EB9337D642406F055E7704CD4B408324A24E2FD6424015C20F73EECC4B405A0D897B2CD64240025CDABAE5CC4B408A63134F2CD64240684128EFE3CC4B40731310EE29D642404863FE1BC5CC4B403E48050429D642404E4B0746B9CC4B401BCE46F828D64240437573F1B7CC4B4001DC2C5E2CD64240783D3D5BACCC4B4095C3DD0F2ED642405160A692A6CC4B40AC13E17030D64240B452AD2AA0CC4B400A44F41032D64240374B6EB99FCC4B40D957C3EA34D642408FAF986C97CC4B4045FA48A533D64240847DE0CF95CC4B40CF1A17693DD64240A0EBB1E375CC4B4055EC794842D642404F24986A66CC4B40EF48AB1045D6424053A40C665DCC4B400052407F46D6424014234BE658CC4B400D0FAB894FD64240E5EBD74235CC4B406BD26D895CD642406371491F04CC4B4003098A1F63D64240F618F6C5EFCB4B40F7FEAB3363D64240D3E6EE29EFCB4B40', 'map38');
+   </script></td><td><div class="objmap" id="map39"></div>
+  <script>
+    ewkbMap('0105000020E61000000C0000000102000000020000000E7679292BD6424001B4F7F3B7CC4B40D35B4DE83FD64240B29E5A7D75CC4B40010200000002000000B05F0BD528D642407C8CA83FB1CC4B401DBB55212FD64240B68C2F359DCC4B40010200000003000000F51C476238D64240967BDC1214CD4B40797764AC36D64240242713B70ACD4B40259EA2D92BD64240B02AB121EECC4B400102000000060000005966B6D03AD64240679B1BD313CD4B40F5D48FF238D64240FB4B416D0ACD4B40DE3994A12AD642401AB84D02E5CC4B40F07673A72AD6424041086DDEDDCC4B40D3495B012AD64240510251E6D5CC4B40D40D147827D642401275D5F2B9CC4B40010200000002000000D81A00602BD642401275D5F2B9CC4B405F3A52222ED6424050583DBBD7CC4B40010200000005000000D6BE25A545D6424080553F8056CC4B40547C32B55BD64240DA8D3EE603CC4B40D4A4CAE660D64240D1D446D0F3CB4B40B010678F61D64240BB8A7BE2EFCB4B404546072461D64240E116E247EBCB4B400102000000040000007BD404F63DD64240BF92F5E516CD4B40E6B809AD3DD6424007793D9814CD4B40A0B657303BD64240B3FB9F0D0ACD4B4024360EAB2ED6424088A3062EEACC4B4001020000000300000047205ED72FD64240C4318111EACC4B40FFB858AC3CD64240B329B2310ACD4B406891ED7C3FD642405985CD0017CD4B4001020000000300000084F4143944D64240C6A2E9EC64CC4B40BE1248895DD64240E078889004CC4B40F2892B1D62D642405898744AF6CB4B40010200000002000000FADCBF6845D64240F04FA91265CC4B4020E5716259D642406441BC0919CC4B400102000000040000000D7041B62CD64240AAA33E24D7CC4B406D6A45402AD642407DB5FEF1B9CC4B40C73F7D152AD64240E36C3A02B8CC4B40045CEBE63DD64240E77DD23F77CC4B40010200000002000000CD5E115729D64240DAD6602BB2CC4B40AA66D65240D642401D38674469CC4B40', 'map39');
+   </script></td><td>52</td><td>прочие аллеи, дорожки и тропы</td><td></td><td>␀</td><td>␀</td><td>␀</td><td>есть</td><td></td><td></td><td>␀</td><td>{2,&quot; 5&quot;,&quot; 19&quot;,&quot; 31&quot;}</td><td>3</td><td>9</td><td>1</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q138698230">https://www.wikidata.org/entity/Q138698230</a></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138783573</td><td>4.4.2</td><td>Еловая тропа</td><td><div class="objmap" id="map40"></div>
+  <script>
+    ewkbMap('0102000020E6100000120000001D1950148DD74240B456B439CECC4B401BA842F284D7424076E4A320D3CC4B404A37D3CE7AD74240C8D68E3DD6CC4B40E298C00875D74240562F1A8DD7CC4B40EB3FC6376FD7424091E56E21D9CC4B400981012956D742409A4D36D4DECC4B404682042049D742400A455FE6E0CC4B40B450D77F42D742406783A7EBE4CC4B40EA0CE7751FD7424014A232B4F0CC4B40BEE5A03A0CD7424083A7902BF5CC4B401301987CFDD64240699BD145F9CC4B408D85D7E4DFD642402AE109BDFECC4B407612B644D3D642403F0BF8EB04CD4B401C34057CC8D642409702D2FE07CD4B40013E2E60B8D642401D7810960CCD4B402B91FAA188D64240F7DA7DD81CCD4B404DDC2A8881D642407394CD661FCD4B406351C71979D642401E2EDE3422CD4B40', 'map40');
+   </script></td><td>␀</td><td>39</td><td>прочие аллеи, дорожки и тропы</td><td>Ель обыкновенная
+Тополь</td><td>␀</td><td>␀</td><td></td><td>␀</td><td>␀</td><td></td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://www.wikidata.org/entity/Q138783573">https://www.wikidata.org/entity/Q138783573</a></td><td>␀</td><td>␀</td></tr>
+  </tbody>
+</table>
+</div>
+ 	<p>Акутально на 
+2026-11-10 08:14:24 +03:00
+</p>
+</body></html>

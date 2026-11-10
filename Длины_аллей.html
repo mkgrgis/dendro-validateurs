@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style>
+		.table-container {
+			max-height: 700px;
+			overflow-y: auto;
+			border: 1px solid #ccc;
+			width: 100%;
+		}
+		.objmap {
+			height: 250px;
+			border: 1px solid #ccc;
+			width: 250px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		thead th {
+			position: sticky;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+			border: 2px solid #f04040;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border: 1px solid #888;
+		}
+		th:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #fff1f1;
+			z-index: 4;
+		}
+		td:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+		}
+		.odd{background:#e8edff;}
+		.leaflet-container {
+			z-index: 0
+		}
+	</style>
+	<link rel="stylesheet" href="leaflet.css" />
+</head>
+<body>
+	<script src="leaflet.js"></script>
+	<script src="hexewkb2geojson.js"></script>
+	<script>
+		const objstyle = { fillOpacity: 0.55, color: "#008800", fillColor: "#000000", weight: 2 };
+	</script>
+	<p>Запрос формирования таблицы</p>
+	<p><code>
+select * from "Бирюлёвский дендропарк"."Кл. аллеи длины";
+	</code></p>
+<div class="table-container">
+<table border="1">
+  <thead><tr><th>Q</th><th>№ в ОКН</th><th>Назв Викиданные</th><th>Длина 1997</th><th>Длина Дм</th><th>Длина Викип</th><th>Длина OSM</th><th>qu 1997</th><th>qu Дм</th></tr></thead>
+  <tbody>
+	<tr class="odd"><td>Q138674264</td><td>4.3.1</td><td>Лиственничная аллея</td><td>495</td><td>360 (450)</td><td>435</td><td>392</td><td>153</td><td>199</td></tr>
+	<tr><td>Q138674267</td><td>4.3.2</td><td>Каштановая аллея</td><td>222</td><td>200</td><td>200</td><td>180</td><td>150</td><td>75</td></tr>
+	<tr class="odd"><td>Q138674270</td><td>4.3.3</td><td>Еловая аллея</td><td>711</td><td>370 (530 вся)</td><td>585, 620 с учётом площадок</td><td>␀</td><td>222</td><td>238</td></tr>
+	<tr><td>Q142079486</td><td>␀</td><td>Еловая аллея [от большой лиственничной до большого туевого круга]</td><td>␀</td><td>␀</td><td>␀</td><td>283</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q142079487</td><td>␀</td><td>Еловая аллея [от большого туевого круга до окраинной дороги]</td><td>␀</td><td>␀</td><td>␀</td><td>433</td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674270</td><td>4.3.3</td><td>Еловая аллея</td><td>711</td><td>240 (530 вся)</td><td>585, 620 с учётом площадок</td><td>␀</td><td>197</td><td>238</td></tr>
+	<tr class="odd"><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>768</td><td>100 (70)</td><td>595</td><td>␀</td><td></td><td>355</td></tr>
+	<tr><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>768</td><td>290 (170+110)</td><td>595</td><td>␀</td><td>140+86</td><td>355</td></tr>
+	<tr class="odd"><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>768</td><td>220 (200)</td><td>595</td><td>␀</td><td>130</td><td>355</td></tr>
+	<tr><td>Q138674271</td><td>4.3.4</td><td>Берёзовая аллея</td><td>768</td><td>670</td><td>595</td><td>␀</td><td>␀</td><td>355</td></tr>
+	<tr class="odd"><td>Q142079484</td><td>␀</td><td>Берёзовая аллея [от Внутреннего пруда до большого туевого круга]</td><td>␀</td><td>␀</td><td>␀</td><td>162</td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q142079485</td><td>␀</td><td>Берёзовая аллея [от большого туевого круга до окраинной дороги]</td><td>␀</td><td>␀</td><td>␀</td><td>463</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q142079483</td><td>␀</td><td>Берёзовая аллея [от тополёвой до Внутреннего пруда]</td><td>␀</td><td>␀</td><td>␀</td><td>316</td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q138674272</td><td>4.3.5</td><td>Большая липовая аллея</td><td>816</td><td>440</td><td>708</td><td>␀</td><td></td><td>326</td></tr>
+	<tr class="odd"><td>Q142079488</td><td>␀</td><td>Липовая большая аллея [от каштановой до большого туевого круга]</td><td>␀</td><td>␀</td><td>␀</td><td>292</td><td>␀</td><td>␀</td></tr>
+	<tr><td>Q142079489</td><td>␀</td><td>Липовая большая аллея [от большого туевого круга до окраинной дороги]</td><td>␀</td><td>␀</td><td>␀</td><td>562</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138674272</td><td>4.3.5</td><td>Большая липовая аллея</td><td>816</td><td>230 (210)</td><td>708</td><td>␀</td><td>78</td><td>326</td></tr>
+	<tr><td>Q138674273</td><td>4.3.6</td><td>Малая липовая аллея</td><td>276</td><td>250</td><td>250</td><td>298</td><td>120
+29</td><td>77</td></tr>
+	<tr class="odd"><td>Q138674274</td><td>4.3.7</td><td>Кленовая аллея</td><td>420</td><td>190 (150)</td><td>352</td><td>316</td><td>115</td><td>178</td></tr>
+	<tr><td>Q138674275</td><td>4.3.8</td><td>Вязовая аллея</td><td>276</td><td>200 (160)</td><td>220</td><td>278</td><td>86</td><td>64</td></tr>
+	<tr class="odd"><td>Q138674276</td><td>4.3.9</td><td>Ясеневая аллея</td><td>␀</td><td>190 (180)</td><td>190</td><td>172</td><td>121 (в сумме)</td><td>␀</td></tr>
+	<tr><td>Q138674277</td><td>4.3.10</td><td>Большая рябиновая аллея</td><td>276</td><td>250</td><td>400</td><td>299</td><td></td><td>118</td></tr>
+	<tr class="odd"><td>Q138674279</td><td>4.3.11</td><td>Малая рябиновая аллея</td><td>165</td><td>150 (120)</td><td>400</td><td>236</td><td>?
+7</td><td>66</td></tr>
+	<tr><td>Q138674280</td><td>4.3.12</td><td>Робиниевая аллея</td><td>540</td><td>480 (430)</td><td>490</td><td>588</td><td>149</td><td>137</td></tr>
+	<tr class="odd"><td>Q138674282</td><td>4.3.13</td><td>Пихтовая аллея</td><td>276</td><td>230 (210)</td><td>250</td><td>369</td><td>127</td><td>83</td></tr>
+	<tr><td>Q138674283</td><td>4.3.14</td><td>Большая туевая аллея</td><td>411</td><td>350</td><td>360</td><td>326</td><td></td><td>428</td></tr>
+	<tr class="odd"><td>Q138674285</td><td>4.3.15</td><td>Малая туевая аллея</td><td>162</td><td>150 (130)</td><td>150</td><td>236</td><td>211 (до 50% выкопано)</td><td>149</td></tr>
+	<tr><td>Q138674286</td><td>4.3.16</td><td>Сиреневая аллея</td><td>␀</td><td>200</td><td>210</td><td>192</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Q138698230</td><td>4.4.1</td><td>Западная тополиная аллея</td><td>1040</td><td>1010</td><td>␀</td><td>957</td><td>␀</td><td>678</td></tr>
+	<tr><td>Q138783573</td><td>4.4.2</td><td>Еловая тропа</td><td>␀</td><td></td><td>␀</td><td>884</td><td>␀</td><td>␀</td></tr>
+  </tbody>
+</table>
+</div>
+ 	<p>Акутально на 
+2026-11-10 08:14:24 +03:00
+</p>
+</body></html>
