@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style>
+		.table-container {
+			max-height: 700px;
+			overflow-y: auto;
+			border: 1px solid #ccc;
+			width: 100%;
+		}
+		.objmap {
+			height: 250px;
+			border: 1px solid #ccc;
+			width: 250px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		thead th {
+			position: sticky;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+			border: 2px solid #f04040;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border: 1px solid #888;
+		}
+		th:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #fff1f1;
+			z-index: 4;
+		}
+		td:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+		}
+		.odd{background:#e8edff;}
+		.leaflet-container {
+			z-index: 0
+		}
+	</style>
+	<link rel="stylesheet" href="leaflet.css" />
+</head>
+<body>
+	<script src="leaflet.js"></script>
+	<script src="hexewkb2geojson.js"></script>
+	<script>
+		const objstyle = { fillOpacity: 0.55, color: "#008800", fillColor: "#000000", weight: 2 };
+	</script>
+	<p>Запрос формирования таблицы</p>
+	<p><code>
+select * from "Бирюлёвский дендропарк"."Неполные флористические таблички";
+	</code></p>
+<div class="table-container">
+<table border="1">
+  <thead><tr><th>OSM назв</th><th>Викисклад</th><th>Википедия</th><th>wp назв</th><th>на OSM как табличка</th><th>title</th><th>Файл</th><th>OSM файл</th><th>Указание на аллею</th><th>Дата установки</th><th>Демонтирована</th><th>От фото до ОСМ точки</th><th>От фотографа до ОСМ точки</th><th>OSM URL</th><th>ВикиСклад URL</th><th>Адрес</th><th>φλ OSM</th><th>φλ₁</th><th>φλ₀</th></tr></thead>
+  <tbody>
+	<tr class="odd"><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>..1985</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/7156457039">https://openstreetmap.org/node/7156457039</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map0"></div>
+  <script>
+    ewkbMap('0101000020E6100000DBF1704C60D6424074ECA012D7CC4B40', 'map0');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Краснокнижные виды растений</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2010</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/7165947157">https://openstreetmap.org/node/7165947157</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map1"></div>
+  <script>
+    ewkbMap('0101000020E610000093C7D3F203D74240ADA987C32DCC4B40', 'map1');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Рябинник рябинолистный Sorbaria sorbifolia (L.) A. Braun</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td>Рябинник рябинолистный Sorbaria sorbifolia</td><td style="background-color: #CAF3A3">✔</td><td>File:Табличка «Рябинник рябинолистный», установленная весной 2020 года на 9-я маточной площадке 28-го участка.jpg</td><td>File:Табличка «Рябинник рябинолистный», установленная весной 2020 года на 9-я маточной площадке 28-го участка.jpg</td><td>␀</td><td>␀</td><td>2020-04..2020-07</td><td>␀</td><td>15.1</td><td>14.1</td><td><a href="https://openstreetmap.org/node/14366513288">https://openstreetmap.org/node/14366513288</a></td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Рябинник рябинолистный», установленная весной 2020 года на 9-я маточной площадке 28-го участка.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Рябинник рябинолистный», установленная весной 2020 года на 9-я маточной площадке 28-го участка.jpg</a></td><td>28×15*</td><td><div class="objmap" id="map2"></div>
+  <script>
+    ewkbMap('0101000020E610000025F72AE8ACD64240CEED146179CC4B40', 'map2');
+   </script></td><td><div class="objmap" id="map3"></div>
+  <script>
+    ewkbMap('0101000020E61000004963B48EAAD64240A60A462575CC4B40', 'map3');
+   </script></td><td><div class="objmap" id="map4"></div>
+  <script>
+    ewkbMap('0101000020E6100000070C923EADD64240177E703E75CC4B40', 'map4');
+   </script></td></tr>
+	<tr><td>Ель обыкновенная Picea abies (L.)</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td>Ель обыкнованная Picea abies (L.)</td><td style="background-color: #CAF3A3">✔</td><td>File:Табличка «Ель обыкновенная или европейская» на участке 9 Бирюлёвского дендрария.jpg</td><td>File:Табличка «Ель обыкновенная или европейская» на участке 9 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>2020-04..2020-07</td><td>␀</td><td>0.4</td><td>14.2</td><td><a href="https://openstreetmap.org/node/7737370220">https://openstreetmap.org/node/7737370220</a></td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Ель обыкновенная или европейская» на участке 9 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Ель обыкновенная или европейская» на участке 9 Бирюлёвского дендрария.jpg</a></td><td>9×1</td><td><div class="objmap" id="map5"></div>
+  <script>
+    ewkbMap('0101000020E61000009D989AA9B5D642402C312A04CDCC4B40', 'map5');
+   </script></td><td><div class="objmap" id="map6"></div>
+  <script>
+    ewkbMap('0101000020E610000002D4D4B2B5D64240F0A2AF20CDCC4B40', 'map6');
+   </script></td><td><div class="objmap" id="map7"></div>
+  <script>
+    ewkbMap('0101000020E6100000E2016553AED64240A9F6E978CCCC4B40', 'map7');
+   </script></td></tr>
+	<tr class="odd"><td>Чубушник обыкновенный или чубушник венечный Philadelphus coronarius L.</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td>Чубушник венечный Philadelphus coronarius L.</td><td style="background-color: #CAF3A3">✔</td><td>File:Табличка «Чубушник венечный» на участке 27 Бирюлёвского дендрария.jpg</td><td>File:Табличка «Чубушник венечный» на участке 27 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>2020-04..2020-07</td><td>␀</td><td>␀</td><td>451.3</td><td><a href="https://openstreetmap.org/node/14366513262">https://openstreetmap.org/node/14366513262</a></td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Чубушник венечный» на участке 27 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Чубушник венечный» на участке 27 Бирюлёвского дендрария.jpg</a></td><td>27×9</td><td><div class="objmap" id="map8"></div>
+  <script>
+    ewkbMap('0101000020E61000001CC81FB182D6424072AB7BBF2CCC4B40', 'map8');
+   </script></td><td>␀</td><td><div class="objmap" id="map9"></div>
+  <script>
+    ewkbMap('0101000020E610000077499C1551D74240522B4CDF6BCC4B40', 'map9');
+   </script></td></tr>
+	<tr><td>Берёза бумажная или Берёза американская белая Вetula papyrifera Marsh.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2020-04..2020-07</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513272">https://openstreetmap.org/node/14366513272</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map10"></div>
+  <script>
+    ewkbMap('0101000020E6100000DB519CA38ED64240EBA05C644CCC4B40', 'map10');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2020-04..2020-07</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/7766342025">https://openstreetmap.org/node/7766342025</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map11"></div>
+  <script>
+    ewkbMap('0101000020E61000008978904369D64240B3AFE18EDCCC4B40', 'map11');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Тополь бальзамический Populus balsamifera L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513284">https://openstreetmap.org/node/14366513284</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map12"></div>
+  <script>
+    ewkbMap('0101000020E61000008763A76961D6424006C0D3BF7FCC4B40', 'map12');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Тополь Симона или китайский Populus simonii Carr.</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td>Тополь Симона или китайский Populus simonii</td><td style="background-color: #CAF3A3">✔</td><td>File:Табличка «Тополь Симона или китайский» на участке 31 Бирюлёвского дендрария.jpg</td><td>File:Табличка «Тополь Симона или китайский» на участке 31 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>2.8</td><td>5.7</td><td><a href="https://openstreetmap.org/node/14366513261">https://openstreetmap.org/node/14366513261</a></td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Тополь Симона или китайский» на участке 31 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Тополь Симона или китайский» на участке 31 Бирюлёвского дендрария.jpg</a></td><td>31×10</td><td><div class="objmap" id="map13"></div>
+  <script>
+    ewkbMap('0101000020E6100000BBFA67BC63D64240559808652BCC4B40', 'map13');
+   </script></td><td><div class="objmap" id="map14"></div>
+  <script>
+    ewkbMap('0101000020E610000026DF6C7363D642400EBE30992ACC4B40', 'map14');
+   </script></td><td><div class="objmap" id="map15"></div>
+  <script>
+    ewkbMap('0101000020E6100000E94482A966D64240E4F6CB272BCC4B40', 'map15');
+   </script></td></tr>
+	<tr><td>Сосна Румелийская или балканская Pinus peuce Griseb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513289">https://openstreetmap.org/node/14366513289</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map16"></div>
+  <script>
+    ewkbMap('0101000020E610000035289A07B0D64240A0A932E774CC4B40', 'map16');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Граб обыкновенный Carpinus betulus L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513257">https://openstreetmap.org/node/14366513257</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map17"></div>
+  <script>
+    ewkbMap('0101000020E6100000AEC387C89FD74240DFD4511F92CC4B40', 'map17');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Тополь чёрный или Осокорь Populus nigra L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513276">https://openstreetmap.org/node/14366513276</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map18"></div>
+  <script>
+    ewkbMap('0101000020E6100000B9D27CDF09D74240668E9BD0DACC4B40', 'map18');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Облепиха крушиновидная Hippophae rhamnoides L</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513278">https://openstreetmap.org/node/14366513278</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map19"></div>
+  <script>
+    ewkbMap('0101000020E610000009336DFFCAD642402557563FDBCC4B40', 'map19');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Можжевельник виргинский Juniperus virginiana L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513277">https://openstreetmap.org/node/14366513277</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map20"></div>
+  <script>
+    ewkbMap('0101000020E6100000A2AFC513E6D64240B48707DEDACC4B40', 'map20');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Ломонос виноградолистный или Клематис виноградолистный Clematis vitalba L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513286">https://openstreetmap.org/node/14366513286</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map21"></div>
+  <script>
+    ewkbMap('0101000020E6100000B312A91F8AD6424019BF3AD8ACCC4B40', 'map21');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Орех серый Júglans cinérea</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513285">https://openstreetmap.org/node/14366513285</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map22"></div>
+  <script>
+    ewkbMap('0101000020E6100000BD5708066BD642401888AFC0A1CC4B40', 'map22');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Смородина кроваво-красная Ribes sanguineum Pursch</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513282">https://openstreetmap.org/node/14366513282</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map23"></div>
+  <script>
+    ewkbMap('0101000020E610000076E50EF681D64240845F8F2EDBCC4B40', 'map23');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Сосна обыкновенная Pinus sylvestris L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513281">https://openstreetmap.org/node/14366513281</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map24"></div>
+  <script>
+    ewkbMap('0101000020E6100000A2C49DC195D6424066BCADF4DACC4B40', 'map24');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Яблоня Сиверса Málus sievérsii L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513283">https://openstreetmap.org/node/14366513283</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map25"></div>
+  <script>
+    ewkbMap('0101000020E610000026E71FD84CD642405FF30588DDCC4B40', 'map25');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Магония падуболистная Mahonia aquifolia (Pursh) Nutt.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513279">https://openstreetmap.org/node/14366513279</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map26"></div>
+  <script>
+    ewkbMap('0101000020E6100000BC1061B2A7D642408DC756E1E0CC4B40', 'map26');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Сосна Банкса Pinus banksiana Lamb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513280">https://openstreetmap.org/node/14366513280</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map27"></div>
+  <script>
+    ewkbMap('0101000020E61000007937BB5A93D64240CE9C3FB7E1CC4B40', 'map27');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Малина душистая Rúbus odoratus L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564916">https://openstreetmap.org/node/14366564916</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map28"></div>
+  <script>
+    ewkbMap('0101000020E610000016E5886B6BD6424004E78C28EDCB4B40', 'map28');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564915">https://openstreetmap.org/node/14366564915</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map29"></div>
+  <script>
+    ewkbMap('0101000020E610000068B4B002D7D64240734E475BF0CB4B40', 'map29');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Ель обыкновенная или европейская Picea abies L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564917">https://openstreetmap.org/node/14366564917</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map30"></div>
+  <script>
+    ewkbMap('0101000020E610000099FC0571D4D64240AF809DF6EFCB4B40', 'map30');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Сирень венгерская Syringa josikaea J. Jack. ex Rchb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564914">https://openstreetmap.org/node/14366564914</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map31"></div>
+  <script>
+    ewkbMap('0101000020E6100000E5FE34FFF9D64240B91CAF40F4CB4B40', 'map31');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Пихта сибирская Ábies sibírica Ledeb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513260">https://openstreetmap.org/node/14366513260</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map32"></div>
+  <script>
+    ewkbMap('0101000020E6100000119DAFA3BBD64240B98D06F016CC4B40', 'map32');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Мушмула германская Mespilus germanica L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513258">https://openstreetmap.org/node/14366513258</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map33"></div>
+  <script>
+    ewkbMap('0101000020E6100000CA970634C7D64240CB5A54D515CC4B40', 'map33');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Лиственница сибирская Larix sibirica Ledeb</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513255">https://openstreetmap.org/node/14366513255</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map34"></div>
+  <script>
+    ewkbMap('0101000020E61000006A696E85B0D64240EF8C5B7116CC4B40', 'map34');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Ясень пенсильванский Fraxinus pensylvanica Marshall</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513271">https://openstreetmap.org/node/14366513271</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map35"></div>
+  <script>
+    ewkbMap('0101000020E6100000BCA882F68FD6424075D88EF348CC4B40', 'map35');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Сосна сибирская, Кедр сибирский Pinus sibirica Du Tour</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513266">https://openstreetmap.org/node/14366513266</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map36"></div>
+  <script>
+    ewkbMap('0101000020E610000074CEF4B7A9D64240CBAEC5B82CCC4B40', 'map36');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Сосна гибкая Pinus flexilis James.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513263">https://openstreetmap.org/node/14366513263</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map37"></div>
+  <script>
+    ewkbMap('0101000020E6100000AE563728ABD64240DBD1490048CC4B40', 'map37');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Клён серебристый Acer saccharum L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513270">https://openstreetmap.org/node/14366513270</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map38"></div>
+  <script>
+    ewkbMap('0101000020E61000003C41AC4896D6424016A243E048CC4B40', 'map38');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Тополь Яблокова Populus x jablokowii Jabl.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564913">https://openstreetmap.org/node/14366564913</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map39"></div>
+  <script>
+    ewkbMap('0101000020E61000003FF1AD5978D7424014E236BF06CC4B40', 'map39');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Тополь канадский Populus × canadensis Moench</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564912">https://openstreetmap.org/node/14366564912</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map40"></div>
+  <script>
+    ewkbMap('0101000020E6100000EA2BA3EC88D74240112FF42D18CC4B40', 'map40');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Клён ложнозибольдов Acer pseudosieboldianum (Pax.) Kom.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564910">https://openstreetmap.org/node/14366564910</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map41"></div>
+  <script>
+    ewkbMap('0101000020E610000074F9C55B9DD74240EAB70ABD59CC4B40', 'map41');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Тополь краснонервный Populus × rubinervis Hort. Alb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564911">https://openstreetmap.org/node/14366564911</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map42"></div>
+  <script>
+    ewkbMap('0101000020E6100000BB2FC26F9ED74240CBFCFE2845CC4B40', 'map42');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Яблоня сливолистная Malus prunifolia (Willd.) Borkh.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564909">https://openstreetmap.org/node/14366564909</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map43"></div>
+  <script>
+    ewkbMap('0101000020E6100000031544937AD7424050CEAB9564CC4B40', 'map43');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Ясень обыкновенный Fraxinus excelsior L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564905">https://openstreetmap.org/node/14366564905</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map44"></div>
+  <script>
+    ewkbMap('0101000020E6100000442EDDC94CD7424033C170AE61CC4B40', 'map44');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Тис ягодный или европейский Taxus baccata</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513295">https://openstreetmap.org/node/14366513295</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map45"></div>
+  <script>
+    ewkbMap('0101000020E61000006F0ED76A0FD742403E97040363CC4B40', 'map45');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Яблоня сибирская или ягодная Malus baccata L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513296">https://openstreetmap.org/node/14366513296</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map46"></div>
+  <script>
+    ewkbMap('0101000020E6100000649DE05119D74240505E1A7563CC4B40', 'map46');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Роза морщинистая или шиповник морщинистый Rosa rugosa Thunb.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513291">https://openstreetmap.org/node/14366513291</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map47"></div>
+  <script>
+    ewkbMap('0101000020E61000004F745DF8C1D6424099130F8354CC4B40', 'map47');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Груша уссурийская Pyrus ussuriensis</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513264">https://openstreetmap.org/node/14366513264</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map48"></div>
+  <script>
+    ewkbMap('0101000020E61000008DDDF41DB2D642401E6BEB4C46CC4B40', 'map48');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Конский каштан обыкновенный Aesculus hippocastanum L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513265">https://openstreetmap.org/node/14366513265</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map49"></div>
+  <script>
+    ewkbMap('0101000020E610000094788A66AFD642403788D68A36CC4B40', 'map49');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Псевдотсуга Мензиса или Дуглаcова пихта Pseudotsuga menziesii (Mirb.) Franco</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513267">https://openstreetmap.org/node/14366513267</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map50"></div>
+  <script>
+    ewkbMap('0101000020E6100000E7FAE362B1D64240EC67565B56CC4B40', 'map50');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Форзиция зеленейшая Forsythia viridissima Lindl.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513268">https://openstreetmap.org/node/14366513268</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map51"></div>
+  <script>
+    ewkbMap('0101000020E6100000ED2DE57CB1D642403041B22550CC4B40', 'map51');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Рябина обыкновенная Sorbus acuparia L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513292">https://openstreetmap.org/node/14366513292</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map52"></div>
+  <script>
+    ewkbMap('0101000020E6100000DEF7B9EBB6D64240DC87179F5DCC4B40', 'map52');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Тополь белый или серебристый Populus alba L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513275">https://openstreetmap.org/node/14366513275</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map53"></div>
+  <script>
+    ewkbMap('0101000020E610000059935D1F8CD6424056911B8F63CC4B40', 'map53');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Клён Траутфеттера Acer trautvetteri Medw. Syn. Acel heldrichii ssp. trautvetteri (Medw.) A. E. Murray</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513273">https://openstreetmap.org/node/14366513273</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map54"></div>
+  <script>
+    ewkbMap('0101000020E61000006BE1687D80D64240810A47904ACC4B40', 'map54');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Яблоня маньчжурская Malus manshuriса (Maxim.) Kom. ex Skvortzov</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513269">https://openstreetmap.org/node/14366513269</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map55"></div>
+  <script>
+    ewkbMap('0101000020E6100000C7702B73A9D64240D372FB404DCC4B40', 'map55');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Сосна скрученная Муррея Pinus contorta ssp. murrayana (Balf.) S. Watson</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513274">https://openstreetmap.org/node/14366513274</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map56"></div>
+  <script>
+    ewkbMap('0101000020E61000001BA77C6363D6424022DA33F048CC4B40', 'map56');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Рябина Кёне Sorbus koehneana Schneid.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513294">https://openstreetmap.org/node/14366513294</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map57"></div>
+  <script>
+    ewkbMap('0101000020E6100000A13193A817D74240A1D4038B68CC4B40', 'map57');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Пузыреплодник калинолистный Physocarpus opulifolius (L.) Maxim.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513297">https://openstreetmap.org/node/14366513297</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map58"></div>
+  <script>
+    ewkbMap('0101000020E61000006F545D763ED742406B31D35169CC4B40', 'map58');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Маакия амурская Maackia amurensis Rupr.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513298">https://openstreetmap.org/node/14366513298</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map59"></div>
+  <script>
+    ewkbMap('0101000020E61000001A6F2BBD36D74240943AB7BF69CC4B40', 'map59');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Липа кавказская Tilia caucasica Rupr.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513287">https://openstreetmap.org/node/14366513287</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map60"></div>
+  <script>
+    ewkbMap('0101000020E61000001A7B40EAC0D642409B7C694073CC4B40', 'map60');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Снежноягодник белый Symphoricarpos albus (L.) S. F. Blake</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513290">https://openstreetmap.org/node/14366513290</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map61"></div>
+  <script>
+    ewkbMap('0101000020E61000004871E9F3ACD64240B90BDEA172CC4B40', 'map61');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Сосна Веймутова или белая восточная Рinus strobus L.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513256">https://openstreetmap.org/node/14366513256</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map62"></div>
+  <script>
+    ewkbMap('0101000020E6100000B6E10BEE62D74240D1CF2FA589CC4B40', 'map62');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Ракитник регенсбургский Chamaecytisus ratisbonensis (Schaeff.) Rothm.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564908">https://openstreetmap.org/node/14366564908</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map63"></div>
+  <script>
+    ewkbMap('0101000020E6100000D4BB783F6ED742400095850A69CC4B40', 'map63');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Тополь душистый Populus suaveolens Fisch. Ex Polit &amp; A. Vilm.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564907">https://openstreetmap.org/node/14366564907</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map64"></div>
+  <script>
+    ewkbMap('0101000020E61000009C09979F65D74240CFD666086CCC4B40', 'map64');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>Клён зеленокорый Acer tegmentosum Maxim.</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366564906">https://openstreetmap.org/node/14366564906</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map65"></div>
+  <script>
+    ewkbMap('0101000020E6100000933C32B154D74240FA0560A868CC4B40', 'map65');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr><td>Черёмуха Маака Padus maackii</td><td style="background-color: #FA5050">✘</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #CAF3A3">✔</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2026-11-03</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://openstreetmap.org/node/14366513293">https://openstreetmap.org/node/14366513293</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map66"></div>
+  <script>
+    ewkbMap('0101000020E61000009EC20078FAD642400722307B7ECC4B40', 'map66');
+   </script></td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Тополь Яблокова» на участке 41 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Тополь Яблокова» на участке 41 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Тополь Яблокова» на участке 41 Бирюлёвского дендрария.jpg</a></td><td>␀</td><td>␀</td><td>␀</td><td><div class="objmap" id="map67"></div>
+  <script>
+    ewkbMap('0101000020E61000003A0664AF77D74240F2D24D6210CC4B40', 'map67');
+   </script></td></tr>
+	<tr><td>Кипари́совик Лоусона (Лавсона) горохопло́дный Chamaecýparis lawsoniana A. Murray bis Oerst.</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td>Кипари́совик горохопло́дный Chamaecýparis pisífera (S. et Z.) Endl.</td><td style="background-color: #CAF3A3">✔</td><td>File:Табличка «Кипарисовик горохоплодный» на участке 46 Бирюлёвского дендрария.jpg</td><td>File:Табличка «Кипарисовик горохоплодный» на участке 46 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>1.5</td><td>5.5</td><td><a href="https://openstreetmap.org/node/14366513259">https://openstreetmap.org/node/14366513259</a></td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Кипарисовик горохоплодный» на участке 46 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Кипарисовик горохоплодный» на участке 46 Бирюлёвского дендрария.jpg</a></td><td>46×26*</td><td><div class="objmap" id="map68"></div>
+  <script>
+    ewkbMap('0101000020E6100000D508FD4CBDD64240FBB0DEA815CC4B40', 'map68');
+   </script></td><td><div class="objmap" id="map69"></div>
+  <script>
+    ewkbMap('0101000020E61000007BBDFBE3BDD642404E0B5EF415CC4B40', 'map69');
+   </script></td><td><div class="objmap" id="map70"></div>
+  <script>
+    ewkbMap('0101000020E610000006F52D73BAD642408A3DB48F15CC4B40', 'map70');
+   </script></td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Лиственница сибирская» на участке 7 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Лиственница сибирская» на участке 7 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Лиственница сибирская» на участке 7 Бирюлёвского дендрария.jpg</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map71"></div>
+  <script>
+    ewkbMap('0101000020E6100000268DD13AAAD64240E25817B7D1CC4B40', 'map71');
+   </script></td><td><div class="objmap" id="map72"></div>
+  <script>
+    ewkbMap('0101000020E61000003B191C25AFD64240E25817B7D1CC4B40', 'map72');
+   </script></td></tr>
+	<tr><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td>Кизильник блестящий Cotoneáster lucídus Schltr.</td><td style="background-color: #FA5050">✘</td><td>␀</td><td>File:Табличка «Кизильник блестящий» в Бирюлёвском дедропарке на участке 2.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2×10</td><td>␀</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Кизильник блестящий» в Бирюлёвском дедропарке на участке 2.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Кизильник блестящий» в Бирюлёвском дедропарке на участке 2.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Кизильник блестящий» в Бирюлёвском дедропарке на участке 2.jpg</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map73"></div>
+  <script>
+    ewkbMap('0101000020E6100000BC0512143FD64240543A58FFE7CC4B40', 'map73');
+   </script></td><td><div class="objmap" id="map74"></div>
+  <script>
+    ewkbMap('0101000020E61000004339D1AE42D642406C96CB46E7CC4B40', 'map74');
+   </script></td></tr>
+	<tr><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td>Сосна пицундская Pinus pityusa L.</td><td style="background-color: #FA5050">✘</td><td>␀</td><td>File:Табличка «Сосна пицундская» в Бирюлёвском дедропарке на участке 2.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>2×10</td><td>␀</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Орех серый» в Бирюлёвском дедропарке на участке 6.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Орех серый» в Бирюлёвском дедропарке на участке 6.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Орех серый» в Бирюлёвском дедропарке на участке 6.jpg</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map75"></div>
+  <script>
+    ewkbMap('0101000020E6100000A6ED5F5969D64240C6C4E6E3DACC4B40', 'map75');
+   </script></td><td><div class="objmap" id="map76"></div>
+  <script>
+    ewkbMap('0101000020E6100000A298BC0166D64240FC3905F9D9CC4B40', 'map76');
+   </script></td></tr>
+	<tr><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td>Орех серый Júglans cinérea</td><td style="background-color: #FA5050">✘</td><td>␀</td><td>File:Табличка «Орех серый» в Бирюлёвском дедропарке на участке 6.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>6×8*</td><td>␀</td><td>␀</td><td>␀</td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Сосна пицундская» в Бирюлёвском дедропарке на участке 2.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Сосна пицундская» в Бирюлёвском дедропарке на участке 2.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Сосна пицундская» в Бирюлёвском дедропарке на участке 2.jpg</a></td><td>␀</td><td>␀</td><td><div class="objmap" id="map77"></div>
+  <script>
+    ewkbMap('0101000020E6100000BC0512143FD64240221ADD41ECCC4B40', 'map77');
+   </script></td><td><div class="objmap" id="map78"></div>
+  <script>
+    ewkbMap('0101000020E6100000965F066344D64240B7973446EBCC4B40', 'map78');
+   </script></td></tr>
+	<tr><td>␀</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td><td>␀</td><td style="background-color: #FA5050">✘</td><td>File:Табличка «Черёмуха Маака» на участке 23 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td><a href="https://commons.wikimedia.org/wiki/File:Табличка «Черёмуха Маака» на участке 23 Бирюлёвского дендрария.jpg">https://commons.wikimedia.org/wiki/File:Табличка «Черёмуха Маака» на участке 23 Бирюлёвского дендрария.jpg</a></td><td>␀</td><td>␀</td><td>␀</td><td><div class="objmap" id="map79"></div>
+  <script>
+    ewkbMap('0101000020E610000034A2B437F8D642400AB952CF82CC4B40', 'map79');
+   </script></td></tr>
+	<tr class="odd"><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td>Черёмуха Маака Padus maackii</td><td style="background-color: #FA5050">✘</td><td>␀</td><td>File:Табличка «Черёмуха Маака» на участке 23 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>23×8</td><td>␀</td><td>␀</td><td>␀</td></tr>
+	<tr><td>␀</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td>Тополь Яблокова Populus x jablokowii Jabl.</td><td style="background-color: #FA5050">✘</td><td>␀</td><td>File:Табличка «Тополь Яблокова» на участке 41 Бирюлёвского дендрария.jpg</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>␀</td><td>41×11</td><td>␀</td><td>␀</td><td>␀</td></tr>
+  </tbody>
+</table>
+</div>
+ 	<p>Акутально на 
+2026-11-11 13:17:45 +03:00
+</p>
+</body></html>
