@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style>
+		.table-container {
+			max-height: 700px;
+			overflow-y: auto;
+			border: 1px solid #ccc;
+			width: 100%;
+		}
+		.objmap {
+			height: 250px;
+			border: 1px solid #ccc;
+			width: 250px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		thead th {
+			position: sticky;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+			border: 2px solid #f04040;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border: 1px solid #888;
+		}
+		th:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #fff1f1;
+			z-index: 4;
+		}
+		td:first-child {
+			position: sticky;
+			left: 0;
+			top: 0;
+			background-color: #f1f1f1;
+			z-index: 3;
+		}
+		.odd{background:#e8edff;}
+		.leaflet-container {
+			z-index: 0
+		}
+	</style>
+	<link rel="stylesheet" href="leaflet.css" />
+</head>
+<body>
+	<script src="leaflet.js"></script>
+	<script src="hexewkb2geojson.js"></script>
+	<script>
+		const objstyle = { fillOpacity: 0.55, color: "#008800", fillColor: "#000000", weight: 2 };
+	</script>
+	<p>Запрос формирования таблицы</p>
+	<p><code>
+select * from "Бирюлёвский дендропарк"."ДТС сводка";
+	</code></p>
+<div class="table-container">
+<table border="1">
+  <thead><tr><th>Q</th><th>Назв Викиданные</th><th>Дм</th><th>OSM алл</th><th>OSM обс</th></tr></thead>
+  <tbody>
+	<tr class="odd"><td>Q138788426</td><td>Барбарисовая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q138783467</td><td>2-я Барбарисовая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q138775612</td><td>Большая аллея венгерской сирени</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138781290</td><td>Аллея китайской сирени</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140190932</td><td>Экспозиционных площадок аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140190934</td><td>Барбарисовая дорожка у большой поляны</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q138698516</td><td>Берёзовая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140077396</td><td>Берёзово-пузыреплодниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077390</td><td>Берёзово-спиреевая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140157986</td><td>Ближняя кизильниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077387</td><td>Ближняя кленовая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140077386</td><td>Липовая ближняя аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077393</td><td>Боярышниковая большая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140190928</td><td>Восточная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140190928</td><td>Восточная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140158015</td><td>Пузыреплодниковая 57-го участка восточная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077388</td><td>Вязово-липовая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140190938</td><td>Экспозиционной площадки главная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140190929</td><td>Грушевая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140190935</td><td>Рощи сакуры дальняя дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140077385</td><td>Липовая дальняя аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140183525</td><td>Дубовой рощи дорога</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140077379</td><td>Пейзажной части парка главная дорога</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q138783484</td><td>Дорога сакуровой рощи</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q138783459</td><td>Дуговая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q138788616</td><td>малая диагональ</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q138788394</td><td>Западная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140158016</td><td>Пузыреплодниковая 57-го участка западная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q138788395</td><td>Западная тропинка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140077391</td><td>Ирговая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140987193</td><td>Каштаново-пузыреплодниковая аллея</td><td style="background-color: #FA5050">✘</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138783464</td><td>Кизильниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140190930</td><td>Кизильниковая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140190931</td><td>Кизильниково-спиреевая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140190936</td><td>Рощи сакуры кольцевая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140190944</td><td>Липовая аллея 54 участка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077383</td><td>Липово-черёмуховая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140190943</td><td>Венгерской сирени малая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077392</td><td>Боярышниковая малая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138783447</td><td>Малая лиственничная аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140158018</td><td>Пузыреплодниковая малая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140077382</td><td>Спиреевая малая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140190926</td><td>Большого пруда набережная</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138783490</td><td>Окраинная дорога исторического дендрария</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140077389</td><td>Берёзовой ближней рощи просека</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q138788392</td><td>Пузыреплодниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140158019</td><td>Пузыреплодниковая тропа в дальней дубовой роще</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138783460</td><td>Северная дорога</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q138783485</td><td>северная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140190939</td><td>Экспозиционной площадки северная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140158014</td><td>Пузыреплодниковая северная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138679481</td><td>северо-восточная диагональ</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140190937</td><td>Рощи сакуры сквозная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140077381</td><td>Спиреевая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077380</td><td>Спиреево-пузыреплодниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138783437</td><td>Большой туевый круг</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q138788425</td><td>Чубушниковая дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140183527</td><td>Шиповниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140190940</td><td>Экспозиционной площадки юго-восточная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140190942</td><td>Экспозиционной площадки южная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140190941</td><td>Экспозиционной площадки юго-западная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140077384</td><td>Липовая южная аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140158039</td><td>Пузыреплодниковая южная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q138788507</td><td>Яблонево-вязовая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077378</td><td>Яблонево-пузыреплодниковая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr><td>Q140077392</td><td>Боярышниковая малая аллея</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td></tr>
+	<tr class="odd"><td>Q140077394</td><td>Бетонная дорога вдоль теплотрассы</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140077395</td><td>Берёзовой дальней рощи тропа</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140077397</td><td>57-го участка западная дорожка</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140190927</td><td>Вдоль левого берега Большого пруда тропа</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140196850</td><td>Дорога вдоль детских площадок</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr><td>Q140196851</td><td>Дорожка к отвершку оврага</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+	<tr class="odd"><td>Q140310833</td><td>Дорожка на продолжении кленовой аллеи</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #CAF3A3">✔</td><td style="background-color: #FA5050">✘</td></tr>
+  </tbody>
+</table>
+</div>
+ 	<p>Акутально на 
+2026-11-11 10:25:14 +03:00
+</p>
+</body></html>
